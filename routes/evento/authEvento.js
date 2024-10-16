@@ -10,7 +10,7 @@ const router = express.Router();
 // Registro de novo cargo em um evento para um usuário existente
 router.post('/register/:nomeURL', async (req, res) => {
     const { nomeURL } = req.params; // Pega o nomeURL da URL
-    const cargos = req.body.cargos; // Assume que idUserProfile é enviado no corpo da requisição
+    const cargos = req.body.cargos; // Assume que os cargos são recebidos no corpo da requisição
 
     if (!Array.isArray(cargos) || cargos.length === 0) {
         return res.status(400).json({ message: 'cargo must be a non-empty array' });
